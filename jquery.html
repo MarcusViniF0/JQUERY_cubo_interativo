@@ -16,19 +16,15 @@
 <body>
     <div id="bloco"></div>
     <p id="texto"></p>
+
     <script>
-        $('#bloco').click(()=>{
-            $("#texto").text("Clicado no quadrado") 
+        $('#bloco').on({
+            click:()=>{$("#texto").text("Clique no quadrado")},
+            mouseenter:()=>{$("#texto").text("mouse entrou no quadrado")},
+            mouseleave:()=>{$("#texto").text("Mouse saiu do quadrado")},
+            dblclick:()=>{$("#texto").text("clique duplo no quadrado")}
         })
-        $('#bloco').mouseenter(()=>{
-            $("#texto").text("Mouse entrou no quadrado") 
-        })
-        $('#bloco').mouseleave(()=>{
-            $("#texto").text("Mouse saiu do quadrado") 
-        })
-        $('#bloco').mousemove(()=>{
-            $("#texto").text("Mouse movel sobre o quadrado") 
-        })
+        $("#texto").text("Clique no quadrado")
     </script>
 </body>
 </html>
