@@ -6,25 +6,22 @@
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <title>Curso de jQuery</title>
     <style>
-        #bloco{
-            width: 200px;
-            height: 200px;
-            background-color: black;
-        }
+        div{border:1px solid #f00;padding: 10px;}
+        p{border:1px solid #00f;padding: 10px;}
+        span{border:1px solid #0f0;padding: 10px;}
     </style>
 </head>
 <body>
-    <div id="bloco"></div>
-    <p id="texto"></p>
-
+        <div>
+            <p>
+                CFB Cusrsos <br/><br/><br/>
+                <span>Cuso de jQuery</span>
+            </p>
+        </div>
     <script>
-        $('#bloco').on({
-            click:()=>{$("#texto").text("Clique no quadrado")},
-            mouseenter:()=>{$("#texto").text("mouse entrou no quadrado")},
-            mouseleave:()=>{$("#texto").text("Mouse saiu do quadrado")},
-            dblclick:()=>{$("#texto").text("clique duplo no quadrado")}
-        })
-        $("#texto").text("Clique no quadrado")
+        $("div").click(()=>{alert('Evento disparando no DIV')})
+        $("p").click((event)=>{event.stopPropagation();alert('Evento disparando no p')})
+        $("span").click((event)=>{event.stopPropagation();alert('Evento disparando no span')})
     </script>
 </body>
 </html>
